@@ -9,7 +9,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+console.log('--HelloWorld--', HelloWorld)
 export default {
   name: 'HomeView',
   data() {
@@ -22,7 +22,7 @@ export default {
       this.msg = 'new msg'
     },
   },
-  components: {
+  components: { // 局部组件
     HelloWorld
   },
   beforeCreate() {
