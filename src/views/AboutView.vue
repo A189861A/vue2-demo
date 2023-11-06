@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <appHeader />
-    <h1>This is an about page</h1>
+    <h1 @click="clickHandle">This is an about page</h1>
   </div>
 </template>
 <script>
@@ -10,7 +10,13 @@ export default{
     return {}
   },
   mounted(){
-    
+  },
+  methods: {
+    clickHandle(){
+      this.$toast({
+        msg: '测试弹窗',
+      })
+    }
   }
 }
 </script>
