@@ -27,3 +27,17 @@
     1. 函数式（无状态）组件
     2. 普通（有状态）组件
     当一个组件是一个函数式组件的时候，它没有管理任何状态，也没有监听任何传递给它的状态，也没有生命周期方法。实际上，它只是一个接受一些 prop 的函数，所以 渲染开销 也低很多。
+
+    # vue实例方法
+    - vm.$set
+    - vm.$delete
+    - vm.$watch
+
+    - vm.$on
+    - vm.$emit
+    - vm.$once
+    - vm.$off
+
+    - vm.$mount
+    - vm.$destory
+    - vm.$nextTick
