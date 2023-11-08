@@ -27,6 +27,11 @@ const routes = [
     path: '/parentView',
     name: 'parentView',
     component: () => import(/* webpackChunkName: "about" */ '../views/parentView.vue')
+  },
+  {
+    path: '/scopedSlots',
+    name: 'scopedSlots',
+    component: () => import(/* webpackChunkName: "about" */ '../views/scopedSlots.vue')
   }
 ]
 
