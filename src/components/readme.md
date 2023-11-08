@@ -41,3 +41,7 @@
     - vm.$mount     如果实例在没有收到el选项的时候，就会处于“没有挂载”的状态，因为没有和它关联的DOM元素。可以使用这个mount方法进行手动挂载。
     - vm.$destory   完全摧毁一个实例，清除和其他实例的连接，并且解除全部指令以及事件监听器。
     - vm.$nextTick  实例方法中的回调函数延迟到DOM更新后才能执行
+
+    # vue实例属性
+    - vm.$attrs         包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
+    - vm.$listeners     包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器

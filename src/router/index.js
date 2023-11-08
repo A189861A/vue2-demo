@@ -22,6 +22,11 @@ const routes = [
     path: '/vmFn',
     name: 'vmFn',
     component: () => import(/* webpackChunkName: "about" */ '../views/vmFn.vue')
+  },
+  {
+    path: '/parentView',
+    name: 'parentView',
+    component: () => import(/* webpackChunkName: "about" */ '../views/parentView.vue')
   }
 ]
 
