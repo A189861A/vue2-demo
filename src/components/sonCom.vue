@@ -11,6 +11,8 @@
                 </div>
             </template>
         </grandsonCom>
+        <br>
+        <div v-if="msg"> {{ msg }}</div>
     </div>
 </template>
 <script>
@@ -19,6 +21,7 @@ export default {
     data() {
         return {}
     },
+    inject: ['msg'],
     props: [
         'name'
     ],

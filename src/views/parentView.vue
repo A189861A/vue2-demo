@@ -14,6 +14,11 @@ export default {
             age: 1
         }
     },
+    provide() {
+        return {
+            msg: '来自爷爷级组件信息'
+        }
+    },
     components: {
         sonCom
     },

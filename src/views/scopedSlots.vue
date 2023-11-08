@@ -27,7 +27,7 @@ let test = {
     },
 
     render () {
-        return (
+        return ( // jsx
         <ul class='test'>
             {this.data.map(item => (
             <li>
