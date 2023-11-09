@@ -12,7 +12,7 @@ export default {
 </script>
 <style scoped>
 .app-header{
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;

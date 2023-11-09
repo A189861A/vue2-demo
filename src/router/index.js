@@ -21,17 +21,17 @@ const routes = [
   {
     path: '/vmFn',
     name: 'vmFn',
-    component: () => import(/* webpackChunkName: "about" */ '../views/vmFn.vue')
+    component: () => import(/* webpackChunkName: "vmFn" */ '../views/vmFn.vue')
   },
   {
     path: '/parentView',
     name: 'parentView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/parentView.vue')
+    component: () => import(/* webpackChunkName: "parentView" */ '../views/parentView.vue')
   },
   {
     path: '/scopedSlots',
     name: 'scopedSlots',
-    component: () => import(/* webpackChunkName: "about" */ '../views/scopedSlots.vue')
+    component: () => import(/* webpackChunkName: "scopedSlots" */ '../views/scopedSlots.vue')
   }
 ]
 
