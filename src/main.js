@@ -8,8 +8,11 @@ Vue.component('appHeader', appHeader)
 
 // toast弹窗
 import showToast from './components/toast'
-Vue.prototype.$toast = showToast;
+Vue.prototype.$toast = showToast
 
+// 把bus挂载到了Vue的原型上, 保证所有的组件都能通过 this.$bus访问到事件总线
+import eventBus from './utils/eventBus'
+Vue.prototype.$bus = eventBus
 
 Vue.config.productionTip = false
 

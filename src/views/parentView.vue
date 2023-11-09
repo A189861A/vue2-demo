@@ -22,10 +22,19 @@ export default {
     components: {
         sonCom
     },
+    mounted(){
+        // 订阅事件 - 接收组件值
+        this.$bus.$on('update',this.update)
+    },
+    destroyed () {
+        // 取消对bus事件的监听
+        this.$bus.$off('update');
+    },
     methods: {
         handle() {
         },
         update(payload){
+            console.log(arguments)
             this.age = payload;
         }
     }

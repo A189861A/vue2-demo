@@ -49,3 +49,5 @@
     - vm.$children      当前实例的直接子组件。需要注意 $children 并不保证顺序，也不是响应式的。
     - vm.$slots         用来访问被插槽分发的内容;插槽不是响应性的
     - vm.$scopedSlots   
+
+#    vue 2.X 组件间通信方式表

@@ -2,6 +2,7 @@
     <div>
         grandson: {{ $attrs.age }}
         <button @click="updateHandle">update age</button>
+        <button @click="emitHandle">emitHandle</button>
         <slot name="footer" v-bind:scopeName="scopeName"></slot>
     </div>
 </template>
@@ -10,7 +11,8 @@ export default {
     name: 'grandson-Com',
     data() {
         return {
-            scopeName: 'grandson-footer'
+            scopeName: 'grandson-footer',
+
         }
     },
     created(){
@@ -20,6 +22,10 @@ export default {
         
     },
     methods: {
+        emitHandle(){
+            // eventBus 发布事件 - 传递值
+            this.$bus.$emit('update', ++this.$attrs.age, 2)
+        },
         updateHandle() {
             this.$emit('upFoo', ++this.$attrs.age)
         }
