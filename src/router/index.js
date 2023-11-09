@@ -32,6 +32,11 @@ const routes = [
     path: '/scopedSlots',
     name: 'scopedSlots',
     component: () => import(/* webpackChunkName: "scopedSlots" */ '../views/scopedSlots.vue')
+  },
+  {
+    path: '/keepAliveView',
+    name: 'keepAliveView',
+    component: () => import(/* webpackChunkName: "keepAliveView" */ '../views/keepAliveView.vue')
   }
 ]
 
