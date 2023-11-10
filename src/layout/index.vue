@@ -5,7 +5,11 @@
         </div>
         <div class="body">
             <div class="left">
-                <slot name="nav">1111</slot>
+                <slot name="nav">
+                    <nav class="nav-left">
+                        <router-link :to="item.path" v-for="(item, i) in routes" :key="i">{{ item.name }}</router-link>
+                    </nav>
+                </slot>
             </div>
             <div class="main">
                 <!-- 一个不带 name 的 <slot> 出口会带有隐含的名字“default”。 -->
@@ -18,10 +22,13 @@
     </div>
 </template>
 <script>
+import {routes} from '../router/index'
 export default {
     name: "baseLayout",
     data() {
-        return {}
+        return {
+            routes
+        }
     }
 }
 </script>

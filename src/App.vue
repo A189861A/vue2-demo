@@ -2,13 +2,6 @@
   <div id="app">
     <baseLayout>
         <template v-slot:header>页面头部</template>
-        <template v-slot:nav>
-          <nav class="nav-left">
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
-            <router-link to="/parentView">parentView</router-link>
-          </nav>
-        </template>
         <!-- 默认插槽 -->
         <template v-solt:default>
           <router-view/>

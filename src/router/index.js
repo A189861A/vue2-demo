@@ -37,8 +37,15 @@ const routes = [
     path: '/keepAliveView',
     name: 'keepAliveView',
     component: () => import(/* webpackChunkName: "keepAliveView" */ '../views/keepAliveView.vue')
+  },
+  {
+    path: '/asyncView',
+    name: 'AsyncView',
+    component: () => import(/* webpackChunkName: "keepAliveView" */ '../views/AsyncView.vue')
   }
 ]
+
+export {routes};
 
 const router = new VueRouter({
   mode: 'history',
