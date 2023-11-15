@@ -42,6 +42,11 @@ const routes = [
     path: '/asyncView',
     name: 'AsyncView',
     component: () => import(/* webpackChunkName: "keepAliveView" */ '../views/AsyncView.vue')
+  },
+  {
+    path: '/renderFn',
+    name: 'renderFn',
+    component: () => import(/* webpackChunkName: "renderFn" */ '../views/renderFn.vue')
   }
 ]
 
