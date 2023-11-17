@@ -7,9 +7,12 @@
           头部
         </div>
       </template>
+      <template v-slot:default>
+        <div>default-solt</div>
+      </template>
       <!-- 作用域插槽 -->
       <template v-slot:footer="childMsg">
-        <div >
+        <div class="footer-scope">
           脚部{{ childMsg }}
         </div>
       </template>
@@ -27,14 +30,13 @@ const fnCom = {
     }
   },
   render: function(h) {
-    let childHeader = this.$slots.header
     return h(
       // {String | Object | Function}
       // 一个 HTML 标签名、组件选项对象，或者
       // resolve 了上述任何一种的一个 async 函数。必填项。
       'div', // div: 子组件
-      {
-      'class': {
+    {
+      class: {
         default: true,
         active: true 
       },
@@ -63,16 +65,42 @@ const fnCom = {
     // 子级虚拟节点 (VNodes)，由 `createElement()` 构建而成，
     // 也可以使用字符串来生成“文本虚拟节点”。可选。
     [
-      h('p', {},['xx', this.level]),
-      h('div', childHeader), //静态插槽
-      h('div',[
+      h('div',{
+        class: {
+          'child-0': true
+        }
+      }, [
+        this.$slots.default
+      ]),
+      // child-1
+      h('div', {
+        class: {
+          'child-1': true
+        }
+      },['child-1-'+ this.level]),
+      // child-2
+      h('div', {
+        class: {
+          'child-2': true
+        }
+      }, this.$slots.header), // 静态插槽
+      // child-3
+      h('div',{
+        class: {
+          'child-3': true
+        }
+      },[
         // 作用域插槽
         this.$scopedSlots.footer({
           text: 'sss'
         })
       ]),
+      // child-4
       // renderFnChildVue  子组件
       h(renderFnChildVue,{
+          class: {
+            'child-4': true
+          },
           // 仅用于组件，用于监听原生事件，而不是组件内部使用
           // `vm.$emit` 触发的事件。
           nativeOn: { // ******在父组件中给子组件绑定click事件******
@@ -86,7 +114,7 @@ const fnCom = {
             }
           },
           style: {
-            height: '50px',
+            height: '100px',
             background: '#fff'
           },
           props: {
@@ -94,8 +122,15 @@ const fnCom = {
           },
           domProps: {
             'title': this.level + ''//这个其实就是子组件的dom属性
-          }
-        },999)
+          },
+          scopedSlots: {
+            // default: (props) => {
+            //   console.log(props) // prps = {d: 'd'}
+            //   return 'default'
+            // },
+            name: () => h('span', 'props.childMain')
+          },
+        },[999, 888])
     ])
   }
 }
