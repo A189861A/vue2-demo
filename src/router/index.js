@@ -57,6 +57,11 @@ const routes = [
     path: '/jsx',
     name: 'jsx',
     component: () => import(/* webpackChunkName: "JAX" */ '../views/JSX.vue')
+  },
+  {
+    path: '/storeA',
+    name: 'store-a',
+    component: () => import(/* webpackChunkName: "JAX" */ '../views/store-a.vue')
   }
 ]
 

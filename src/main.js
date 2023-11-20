@@ -16,7 +16,11 @@ Vue.prototype.$bus = eventBus
 
 Vue.config.productionTip = false
 
+// 1. 导入store
+import store from './store' 
+
 new Vue({
   router,
+  store, // 注入Vue实例
   render: h => h(App)
 }).$mount('#app')
