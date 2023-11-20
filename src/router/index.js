@@ -52,6 +52,11 @@ const routes = [
     path: '/customEvent',
     name: 'customEvent',
     component: () => import(/* webpackChunkName: "customEvent" */ '../views/customEvent.vue')
+  },
+  {
+    path: '/jsx',
+    name: 'jsx',
+    component: () => import(/* webpackChunkName: "JAX" */ '../views/JSX.vue')
   }
 ]
 
