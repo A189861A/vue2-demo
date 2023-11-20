@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import moduleA from './modA'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -32,6 +34,9 @@ const store = new Vuex.Store({
             context.commit('increment', payload)
         }, 2000);
       }
+  },
+  modules: {
+    moduleA
   }
 })
 
