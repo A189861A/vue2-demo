@@ -47,6 +47,11 @@ const routes = [
     path: '/renderFn',
     name: 'renderFn',
     component: () => import(/* webpackChunkName: "renderFn" */ '../views/renderFn.vue')
+  },
+  {
+    path: '/customEvent',
+    name: 'customEvent',
+    component: () => import(/* webpackChunkName: "customEvent" */ '../views/customEvent.vue')
   }
 ]
 
