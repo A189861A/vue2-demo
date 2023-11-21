@@ -3,9 +3,23 @@ import Vuex from 'vuex'
 
 import moduleA from './modA'
 
+// Vuex 插件就是一个函数，它接收 store 作为唯一参数：
+// 在插件中不允许直接修改状态，只能通过提交 mutation 来触发变化。
+const myPlugin = store => {
+    // 当 store 初始化后调用
+    store.subscribe((mutation, state) => {
+      // 每次 mutation 之后调用
+      // mutation 的格式为 { type, payload }
+      console.log('---vuex-plugin-mutation---',mutation)
+      console.log('---vuex-plugin-state---',state)
+    })
+  }
+  
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+  plugins: [myPlugin],
   state: {
     count: 0,
     num: 1

@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState, mapGetters } from 'vuex'
 
 export default {
     data() {
@@ -13,12 +13,18 @@ export default {
         }
     },
     created() {
-        console.log('---this.$store---', this.$store)
+        console.log('---this.$store---', this.$store.getters)
     },
     computed: {
         ...mapState('moduleA', {
             'count': state => state.count
-        })
+        }),
+        // 写法一
+        // ...mapGetters('moduleA', ['doubleCount']),
+        // 写法二
+        ...mapGetters('moduleA', {
+            'doubleCount': 'doubleCount'
+        }),
     },
     methods: {
         clickHandle() {
