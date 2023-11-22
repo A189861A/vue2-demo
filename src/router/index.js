@@ -67,15 +67,34 @@ const routes = [
     path: '/storeModA',
     name: 'storeModA',
     component: () => import(/* webpackChunkName: "storeModA" */ '../views/storeModA.vue')
-  }
+  },
+  {
+    path: '/routerParam/:id',
+    name: 'routerParam',
+    component: () => import(/* webpackChunkName: "routerParam" */ '../views/routerParam.vue')
+  },
+  {
+    path: '/routerParamFrom',
+    name: 'routerParamFrom',
+    component: () => import(/* webpackChunkName: "routerParamFrom" */ '../views/routerParamFrom.vue')
+  },
 ]
 
 export {routes};
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', // history  hash
   base: process.env.BASE_URL,
   routes
 })
+
+// 全局前置守卫
+router.beforeEach((to, from, next) => {
+  console.log(to, from)
+  next();
+})
+
+
+
 
 export default router
