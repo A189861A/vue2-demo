@@ -71,12 +71,23 @@ const routes = [
   {
     path: '/routerParam/:id',
     name: 'routerParam',
-    component: () => import(/* webpackChunkName: "routerParam" */ '../views/routerParam.vue')
+    component: () => import(/* webpackChunkName: "routerParam" */ '../views/routerParam.vue'),
+    // 布尔模式
+    // props: true // 当 props 设置为 true 时，route.params 将被设置为组件的 props。
+
+    // 对象模式
+    props: { name: 'World' } // props 是一个对象时，它将原样设置为组件 props/$attrs。当 props/$attrs 是静态的时候很有用
+
+    // 函数模式
+    // 返回 props 的函数接受的参数为路由记录 route
+    // props: (route) => {
+    //   return { name: route.query.d + "!" }
+    // }
   },
   {
     path: '/routerParamFrom',
     name: 'routerParamFrom',
-    component: () => import(/* webpackChunkName: "routerParamFrom" */ '../views/routerParamFrom.vue')
+    component: () => import(/* webpackChunkName: "routerParamFrom" */ '../views/routerParamFrom.vue'),
   },
 ]
 

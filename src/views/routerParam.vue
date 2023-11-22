@@ -8,7 +8,11 @@
     data(){
       return {}
     },
+    props: ['id'],
     mounted(){
+    },
+    created() {
+      this.$route;
     },
     methods: {
 
