@@ -1,31 +1,23 @@
 <template>
-    <div>
+    <div class="grandsonCom">
         grandson: {{ $attrs.age }}
         <button @click="updateHandle">update age</button>
-        <button @click="emitHandle">emitHandle</button>
-        <slot name="footer" v-bind:scopeName="scopeName"></slot>
+        <div v-if="msg"> {{ msg }}</div>
     </div>
 </template>
 <script>
 export default {
     name: 'grandson-Com',
     data() {
-        return {
-            scopeName: 'grandson-footer',
-
-        }
+        return {}
     },
-    created(){
-    //   this.$slots.default;
-        console.log('---$slots---',this.$slots)
-        console.log('---$scopedSlots---',this.$scopedSlots.footer('dddd'));
-        
+    inject: ['msg'],
+    created() {
+        console.log('--grandson-$attrs--', this.$attrs);
+        console.log('--grandson-$listeners--', this.$listeners);
     },
     methods: {
-        emitHandle(){
-            // eventBus 发布事件 - 传递值
-            this.$bus.$emit('update', ++this.$attrs.age, 2)
-        },
+
         updateHandle() {
             this.$emit('upFoo', ++this.$attrs.age)
         }

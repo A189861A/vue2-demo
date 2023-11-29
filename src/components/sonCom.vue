@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sonCom">
         sonCom: {{ name }}--{{ $attrs.age }}
         <br>
         <grandsonCom v-bind="$attrs" v-on="$listeners">
@@ -12,7 +12,6 @@
             </template>
         </grandsonCom>
         <br>
-        <div v-if="msg"> {{ msg }}</div>
     </div>
 </template>
 <script>
@@ -21,11 +20,11 @@ export default {
     data() {
         return {}
     },
-    inject: ['msg'],
-    props: [
-        'name'
-    ],
+    props: {
+        'name': { type: String },
+    },
     created() {
+        console.log('--$vnode--', this.$vnode.data)
         console.log('--son-$attrs--', this.$attrs);
         console.log('--son-$listeners--', this.$listeners);
     },

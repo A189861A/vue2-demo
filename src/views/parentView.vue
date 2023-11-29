@@ -2,7 +2,7 @@
     <div>
         parentView: {{ name }}
         <br>
-        <sonCom :name="name" class="class-1" style="" :age="age" v-on:click="handle" @upFoo="update"></sonCom>
+        <sonCom :name="name" class="parent-class" :style="{ color: textColor }" :age="age" :sex="1" v-on:click="handle" @upFoo="update"></sonCom>
     </div>
 </template>
 <script>
@@ -11,7 +11,10 @@ export default {
     data() {
         return {
             name: 'name',
-            age: 1
+            age: 1,
+            parentClass: 'parent-class',
+            textColor: 'red',
+            textSize: '20px'
         }
     },
     provide() {
