@@ -89,6 +89,11 @@ const routes = [
     name: 'routerParamFrom',
     component: () => import(/* webpackChunkName: "routerParamFrom" */ '../views/routerParamFrom.vue'),
   },
+  {
+    path: '/mixinView',
+    name: 'mixinView',
+    component: () => import(/* webpackChunkName: "mixinView" */ '../views/mixinView.vue'),
+  },
 ]
 
 export {routes};
