@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <baseLayout>
-        <template v-slot:header>页面头部</template>
-        <!-- 默认插槽 -->
-        <template v-solt:default>
-          <router-view/>
-        </template>
-        <template v-solt:footer></template>
-    </baseLayout>
+    <KooHome>
+    </KooHome>
   </div>
 </template>
 <script>
-import baseLayout from './layout/index.vue'
+import KooHome from './koo/KooHome.vue';
 export default {
-  components: {baseLayout}
+  components: {KooHome}
 }
 </script>
 <style>
@@ -25,9 +19,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 .nav-left{
   display: flex;
