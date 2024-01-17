@@ -23,8 +23,12 @@ export default {
       lastName: 'lastName'
     }
   },
+  inject: ['foo', 'obj'],
   props: {
     msg: String
+  },
+  created() {
+    console.log('----created-inject----', this.foo);
   },
   // 当需要在数据变化时 执行异步 或开销较大的操作时，这个方式是最有用的。
   watch: {
@@ -36,6 +40,9 @@ export default {
   },
   // 计算属性是基于它们的响应式依赖进行缓存的
   computed: {
+    newFoo() {
+      return this.foo()
+    },
     fullName() {
       return this.firstName +  this.lastName;
     },

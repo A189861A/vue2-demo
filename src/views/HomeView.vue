@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg="msg"/>
+    <input v-model="firstNum"> {{ thirdNum }}
     <button @click="editMsgHandle">按钮</button>
   </div>
 </template>
@@ -14,7 +15,23 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      firstNum: 0,
+      obj: {
+        name: '张三'
+      }
+    }
+  },
+  provide: function() {
+    return {
+      foo: () =>  this.firstNum,
+      obj: this.obj
+    }
+  },
+  computed: {
+    thirdNum () {
+      console.log('computed',)
+      return this.firstNum + '元'
     }
   },
   methods: {
